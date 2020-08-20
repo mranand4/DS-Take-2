@@ -22,7 +22,7 @@ public class Main {
         dll.insertAtStart(2);
         dll.insertAtEnd(3);
         dll.insertAtStart(1);
-        System.out.println(dll.get(2));
+        dll.set(2, 10);
     }
     
 }

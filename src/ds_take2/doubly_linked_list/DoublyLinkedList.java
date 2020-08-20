@@ -164,5 +164,47 @@ public class DoublyLinkedList {
         
     }
     
+    public int set(int index, int value) {
+        
+        int i=0;
+        Node curr = head;
+        
+        while(curr != null) {
+            if(index == i) {
+                curr.setData(value);
+                return i;
+            }
+            i++;
+            curr = curr.getNext();
+        }
+        
+        return -1;
+    }
+    
+    public int[] getAsArray() {
+        
+        int arr[] = new int[size()];
+        
+        int i = 0;
+        Node curr = head;
+        
+        while(curr != null) {
+            arr[i] = curr.getData();
+            i++;
+            curr = curr.getNext();
+        }
+        
+        return arr;
+        
+    }
+    
+    public boolean isEmpty() {
+        return head == null;
+    }
+    
+    public void clear() {
+        head = null;
+    }
+    
       
 }
