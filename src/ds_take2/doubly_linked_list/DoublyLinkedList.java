@@ -17,6 +17,13 @@ public class DoublyLinkedList {
         head = null;
     }
     
+    private Node getNode(int data) {
+ 
+        Node n = new Node(data, null, null);       
+        return n;  
+        
+    }
+    
     public void insertAtStart(int data) {
         
         Node n = getNode(data);
@@ -24,8 +31,8 @@ public class DoublyLinkedList {
         if(head == null) {
             head = n;
         } else {
-            head.prev = n;
-            n.next = head;
+            head.setPrev(n);
+            n.setNext(head);
             head = n;
         }
         
@@ -39,11 +46,11 @@ public class DoublyLinkedList {
             head = n;
         } else {
             Node curr = head;
-            while(curr.next != null) {
-                curr = curr.next;
+            while(curr.getNext() != null) {
+                curr = curr.getNext();
             }
-            n.prev = curr;
-            curr.next = n;
+            n.setPrev(curr);
+            curr.setNext(n);
         }
         
     }
@@ -51,8 +58,8 @@ public class DoublyLinkedList {
     public void print() {
         Node curr = head;
         while(curr != null) {
-            System.out.println(curr.data);
-            curr = curr.next;
+            System.out.println(curr.getData());
+            curr = curr.getNext();
         } 
     }
     
@@ -60,25 +67,51 @@ public class DoublyLinkedList {
         
         Node curr = head;
         
-        while(curr.next != null)
-            curr = curr.next;
+        while(curr.getNext() != null)
+            curr = curr.getNext();
         
         while(curr != null) {
-            System.out.println(curr.data);
-            curr = curr.prev;
+            System.out.println(curr.getData());
+            curr = curr.getPrev();
         }
         
     }
     
-    private Node getNode(int data) {
- 
-        Node n = new Node();
-        n.data = data;
-        n.next = null;
-        n.prev = null;
+    public int getMax() {
         
-        return n;
+        if(head == null) {
+            return 0;
+        }
         
+        int max = head.getData();
+        Node curr = head;
+        
+        while(curr != null) {
+            if(curr.getData() > max)
+                max = curr.getData();
+            curr = curr.getNext();
+        }
+        
+        return max;
     }
     
+    public int getMin() {
+        
+        if(head == null) {
+            return 0;
+        }
+        
+        int min = head.getData();
+        Node curr = head;
+        
+        while(curr != null) {
+            if(curr.getData() < min)
+                min = curr.getData();
+            curr = curr.getNext();
+        }
+        
+        return min;
+    }
+    
+      
 }

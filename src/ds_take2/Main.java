@@ -19,9 +19,10 @@ public class Main {
     public static void main(String[] args) {
         DoublyLinkedList dll = new DoublyLinkedList();
         dll.insertAtEnd(0);
-        dll.insertAtEnd(2);
+        dll.insertAtStart(2);
         dll.insertAtEnd(3);
-        dll.rprint();
+        dll.insertAtStart(1);
+        System.out.println(dll.getMin());
     }
     
 }
