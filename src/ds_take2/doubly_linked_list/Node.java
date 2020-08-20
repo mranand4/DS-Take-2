@@ -7,8 +7,11 @@ package ds_take2.doubly_linked_list;
 
 /**
  *
- * @author hp
+ * @author Shivansh Anand
+ * @date   20th August, 2020
+ * 
  */
+
 public class Node {
     
     private int data;

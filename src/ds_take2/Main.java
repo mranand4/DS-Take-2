@@ -9,20 +9,20 @@ import ds_take2.doubly_linked_list.DoublyLinkedList;
 
 /**
  *
- * @author hp
+ * @author Shivansh Anand
+ * @date   20th August, 2020
+ * 
  */
+
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         DoublyLinkedList dll = new DoublyLinkedList();
         dll.insertAtEnd(0);
         dll.insertAtStart(2);
         dll.insertAtEnd(3);
         dll.insertAtStart(1);
-        System.out.println(dll.getMin());
+        System.out.println(dll.get(2));
     }
     
 }

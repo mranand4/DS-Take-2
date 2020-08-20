@@ -7,8 +7,11 @@ package ds_take2.doubly_linked_list;
 
 /**
  *
- * @author hp
+ * @author Shivansh Anand
+ * @date   20th August, 2020
+ * 
  */
+
 public class DoublyLinkedList {
     
     private Node head;
@@ -111,6 +114,54 @@ public class DoublyLinkedList {
         }
         
         return min;
+    }
+    
+    public int size() {
+        
+        int size = 0;
+        Node curr = head;
+        
+        while(curr != null) {
+            curr = curr.getNext();
+            size++;
+        }
+        
+        return size;
+        
+    }
+    
+    // returns index of element n
+    public int find(int n) {
+        
+        int index = 0;       
+        Node curr = head;
+        
+        while(curr != null) {
+            if(curr.getData() == n)
+                return index;
+            index++;
+            curr = curr.getNext();
+        }
+        
+        return -1;
+        
+    }
+    
+    //returns element at index 
+    public int get(int index) {
+        
+        int i = 0;
+        Node curr = head;
+        
+        while(curr != null) {
+            if(index == i)
+                return curr.getData();
+            i++;
+            curr = curr.getNext();
+        }
+        
+        return -1;
+        
     }
     
       
