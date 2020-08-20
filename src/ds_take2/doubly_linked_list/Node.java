@@ -12,6 +12,7 @@ package ds_take2.doubly_linked_list;
  * 
  */
 
+// basic unit of a doubly linked list
 public class Node {
     
     private int data;

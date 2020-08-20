@@ -20,6 +20,7 @@ public class DoublyLinkedList {
         head = null;
     }
     
+    // creates and returns a new node with prev and next as null
     private Node getNode(int data) {
  
         Node n = new Node(data, null, null);       
@@ -27,6 +28,7 @@ public class DoublyLinkedList {
         
     }
     
+    // inserts new node at beginning of the list;
     public void insertAtStart(int data) {
         
         Node n = getNode(data);
@@ -41,6 +43,7 @@ public class DoublyLinkedList {
         
     }
     
+    //inserts new node at end of the list
     public void insertAtEnd(int data) {
         
         Node n = getNode(data);
@@ -58,6 +61,7 @@ public class DoublyLinkedList {
         
     }
         
+    //prints the list ( beginning to end )
     public void print() {
         Node curr = head;
         while(curr != null) {
@@ -66,6 +70,7 @@ public class DoublyLinkedList {
         } 
     }
     
+    // prints the list ( end to beginning )
     public void rprint() {
         
         Node curr = head;
@@ -80,6 +85,7 @@ public class DoublyLinkedList {
         
     }
     
+    // returns the maximum element in the list ( if list is empty it returns 0 )
     public int getMax() {
         
         if(head == null) {
@@ -98,6 +104,7 @@ public class DoublyLinkedList {
         return max;
     }
     
+    // returns the minimum element in the list ( if list is empty it returns 0 )
     public int getMin() {
         
         if(head == null) {
@@ -116,6 +123,7 @@ public class DoublyLinkedList {
         return min;
     }
     
+    // returns the current size of the list
     public int size() {
         
         int size = 0;
@@ -130,7 +138,7 @@ public class DoublyLinkedList {
         
     }
     
-    // returns index of element n
+    // searches for an element and returns it's index if found, if element is not found it returns -1;
     public int find(int n) {
         
         int index = 0;       
@@ -147,7 +155,7 @@ public class DoublyLinkedList {
         
     }
     
-    //returns element at index 
+    //returns element at given index, if index is invalid it returns -1
     public int get(int index) {
         
         int i = 0;
@@ -164,6 +172,7 @@ public class DoublyLinkedList {
         
     }
     
+    // sets a value at a particular index
     public int set(int index, int value) {
         
         int i=0;
@@ -181,6 +190,7 @@ public class DoublyLinkedList {
         return -1;
     }
     
+    //removes the element at a particular index
     public int removeAt(int index) {
         
         if(index == 0) {
@@ -207,6 +217,7 @@ public class DoublyLinkedList {
         return -1;
     }
     
+    // returns list as an int array
     public int[] getAsArray() {
         
         int arr[] = new int[size()];
@@ -222,12 +233,14 @@ public class DoublyLinkedList {
         
         return arr;
         
-    }
+    } 
     
+    // checks if the list is empty
     public boolean isEmpty() {
         return head == null;
     }
     
+    // empties the list
     public void clear() {
         head = null;
     }
