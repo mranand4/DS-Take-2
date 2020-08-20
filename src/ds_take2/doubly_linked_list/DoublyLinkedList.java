@@ -181,6 +181,32 @@ public class DoublyLinkedList {
         return -1;
     }
     
+    public int removeAt(int index) {
+        
+        if(index == 0) {
+            head = head.getNext();
+            return index;
+        }
+        
+        int i = 0;
+        Node curr = head;
+        
+        while(curr != null) {
+            if(i == index) {
+                Node p = curr.getPrev();
+                Node n = curr.getNext();
+                p.setNext(n);
+                n.setPrev(p);
+                curr = null;
+                return i;
+            }
+            i++;
+            curr = curr.getNext();
+        }
+        
+        return -1;
+    }
+    
     public int[] getAsArray() {
         
         int arr[] = new int[size()];

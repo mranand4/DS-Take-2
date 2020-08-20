@@ -23,6 +23,8 @@ public class Main {
         dll.insertAtEnd(3);
         dll.insertAtStart(1);
         dll.set(2, 10);
+        dll.removeAt(1);
+        dll.print();
     }
     
 }
