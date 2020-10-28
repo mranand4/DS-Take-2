@@ -202,6 +202,30 @@ public class BinarySearchTree {
 		return parent;
 	}
 	
+	public char getSmallest() {
+		
+		Node temp = root;
+		
+		while(temp.left != null) {
+			temp = temp.left;
+		}
+		
+		return temp.data;
+		
+	}
+	
+	public char getLargest() {
+		
+		Node temp = root;
+		
+		while(temp.right != null) {
+			temp = temp.right;
+		}
+		
+		return temp.data;
+				
+	}
+	
 	public void clear() {
 		root = null;
 	}
