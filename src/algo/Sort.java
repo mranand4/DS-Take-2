@@ -63,3 +63,54 @@ public class Sort {
 	}
 
 }
+
+
+// implemented  quicksort in cpp ( cos am in windows rn ) will implement it in java when i go over to linux
+
+// #include<iostream>
+
+// using namespace std;
+
+// void sort(int* arr, int len) {
+	
+	// if(len < 2) {
+		// //nothing to be done here
+	// } else {
+		// int pivot = arr[0];
+		
+		// int i, leftLen = 0, rightLen = 0, j = 0, k = 0;
+		
+		// for(i=1; i<len; i++) {
+			// if(*(arr+i) < pivot)
+				// leftLen+=1;
+			// else
+				// rightLen+=1;
+		// }
+		
+		// int leftArr[leftLen];
+		// int rightArr[rightLen];
+			
+		
+		// for(i=1; i<len; i++)
+			// if(*(arr+i) < pivot)
+				// leftArr[j++] = *(arr+i);
+			// else
+				// rightArr[k++] = *(arr+i);
+		
+		// sort(&leftArr[0], leftLen);
+		// sort(&rightArr[0], rightLen);
+		
+		// for(i=0; i<leftLen; i++)
+			// *(arr+i) = leftArr[i];
+		
+		// *(arr + i) = pivot;
+		// k = 0;
+		
+		// // previously I did it till rightLen, but it won't work cause i can be greater than length of rightArr
+		// for(i=i+1 ; i<len; i++)
+			// *(arr + i) = rightArr[k++];
+
+		
+	// }
+	
+// }
