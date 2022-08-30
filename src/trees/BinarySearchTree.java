@@ -1,4 +1,4 @@
-package ds;
+package trees;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -18,7 +18,8 @@ public class BinarySearchTree {
 		}
 		
 	}
-	
+
+
 	private static final String MSG_1 = "INSERTED WITH PARENT : ";
 	private static final String MSG_2 = "CREATED THE ROOT NODE :  ";
 	private static final String MSG_3 = "CAN'T INSERT CAUSE OF DUPLICATE VALUE";

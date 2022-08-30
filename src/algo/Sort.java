@@ -57,8 +57,10 @@ public class Sort {
 			
 			int temp = arr[i];
 			arr[i] = arr[minIndex];
-			arr[minindex] = temp;
+			arr[minIndex] = temp;
 		}
+
+		return arr;
 			    
 	}
 
