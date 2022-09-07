@@ -8,8 +8,8 @@ public class Main {
 
     public static void main(String args[]) {
 
-        ConnectedComponents comp = new ConnectedComponents();
-        comp.run();
+        System.out.println("FUCKING GIT");
+
     }
 
 
