@@ -1,14 +1,15 @@
-import graph.ConnectedComponents;
-import graph.DFS;
-import graph.representation.AdjMatrixToAdjList;
-import graph.BFS;
-import graph.representation.adjlistmaps.Graph;
+import practice.Sandbox;
 
 public class Main {
 
     public static void main(String args[]) {
 
-        System.out.println("FUCKING GIT");
+        long start = System.nanoTime();
+        Sandbox sb = new Sandbox();
+        System.out.println("RUNNING ...");
+       System.out.println("RECURSIVE ANS: " + sb.sum(50000) + "\nTIME: " + (System.nanoTime() - start));
+        start = System.nanoTime();
+//        System.out.println("LOOP ANS: " + sb.sumLoop(50000) + "\nTIME: " + (System.nanoTime() - start));
 
     }
 
