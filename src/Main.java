@@ -1,16 +1,13 @@
-import practice.Sandbox;
+import practice.RecursiveProblems;
+
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String args[]) {
 
-        long start = System.nanoTime();
-        Sandbox sb = new Sandbox();
-        System.out.println("RUNNING ...");
-       System.out.println("RECURSIVE ANS: " + sb.sum(50000) + "\nTIME: " + (System.nanoTime() - start));
-        start = System.nanoTime();
-//        System.out.println("LOOP ANS: " + sb.sumLoop(50000) + "\nTIME: " + (System.nanoTime() - start));
-
+        RecursiveProblems ob = new RecursiveProblems();
+        System.out.println(ob.combination(5, 2));
     }
 
 
