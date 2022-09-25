@@ -1,7 +1,9 @@
 package practice;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class RecursiveProblems {
 
@@ -58,6 +60,24 @@ public class RecursiveProblems {
         if(r == 0 || r == n)
             return 1;
         return combination(n - 1, r) + combination(n - 1, r - 1);
+    }
+
+    private void permutations(String soFar, String rest, List<String> list) {
+        if(rest.length() == 0)
+            list.add(soFar);
+        else {
+            for(int i=0; i<rest.length(); i++) {
+                String next = soFar + rest.charAt(i);
+                String remaining = rest.substring(0, i) + rest.substring(i+1);
+                permutations(next, remaining, list);
+            }
+        }
+    }
+
+    public List<String> listPermutations(String word) {
+        List<String> list = new ArrayList<>();
+        permutations("", word, list);
+        return list;
     }
 
     //checks if key exists in a sorted array, requires a sorted array.
