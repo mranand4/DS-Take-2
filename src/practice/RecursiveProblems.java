@@ -80,6 +80,23 @@ public class RecursiveProblems {
         return list;
     }
 
+    private void subsets(List<String> list, String soFar, String rest) {
+
+        if(rest.length() == 0)
+            list.add(soFar);
+        else {
+            subsets(list, soFar + rest.charAt(0), rest.substring(1));
+            subsets(list, soFar, rest.substring(1));
+        }
+
+    }
+
+    public List<String> listSubsets(String word) {
+        List<String> list = new ArrayList<>();
+        subsets(list, "", word);
+        return list;
+    }
+
     //checks if key exists in a sorted array, requires a sorted array.
     public int binSearch(int arr[], int key) {
         return binSearch(arr, key, 0, arr.length);
