@@ -15,7 +15,8 @@ public class Main {
         ll.inertAt(5, 4);
         ll.inertAt(6, 3);
         ll.show();
-
+        ll.removeAtPosFromEnd(3);
+        ll.show();
     }
 
 

@@ -7,9 +7,12 @@ public class LinkedList {
 
         public Node(int val) {
             this.val = val;
+            this.next = null;
         }
 
-        public Node() {}
+        public Node() {
+            this.next = null;
+        }
     }
 
     private Node head;
@@ -26,7 +29,7 @@ public class LinkedList {
         Node runner = head;
         int size = 0;
 
-        while(runner != null) {
+        while (runner != null) {
             runner = runner.next;
             size++;
         }
@@ -42,7 +45,7 @@ public class LinkedList {
         Node runner = head;
         StringBuilder sb = new StringBuilder();
 
-        while(runner != null) {
+        while (runner != null) {
             sb.append(runner.val);
             sb.append("-->");
             runner = runner.next;
@@ -61,7 +64,7 @@ public class LinkedList {
     public void insertAtTail(int val) {
         Node runner = head;
 
-        while(runner.next != null) {
+        while (runner.next != null) {
             runner = runner.next;
         }
 
@@ -69,11 +72,11 @@ public class LinkedList {
     }
 
     public void inertAt(int val, int idx) {
-        if(idx == 0) {
+        if (idx == 0) {
             insertAtHead(val);
         }
 
-        if(idx > size()) {
+        if (idx > size()) {
             return;
         }
 
@@ -84,7 +87,7 @@ public class LinkedList {
          * Travelling till node@[idx - 1].
          * After this loop, runner will point at node@[idx-1] i.e. node before node@[idx]
          */
-        while(runner != null && --idx > 0) {
+        while (runner != null && --idx > 0) {
             runner = runner.next;
         }
 
@@ -101,7 +104,7 @@ public class LinkedList {
         /**
          * Travelling till node at index idx.
          */
-        while(idx-- > 0) {
+        while (idx-- > 0) {
             runner = runner.next;
         }
 
@@ -109,7 +112,7 @@ public class LinkedList {
     }
 
     public void removeHead() {
-        if(head != null) head = head.next;
+        if (head != null) head = head.next;
     }
 
     public void removeTail() {
@@ -118,7 +121,7 @@ public class LinkedList {
         /**
          * Travelling till node before tail.
          */
-        while(runner.next.next != null) {
+        while (runner.next.next != null) {
             runner = runner.next;
         }
 
@@ -126,7 +129,7 @@ public class LinkedList {
     }
 
     public void removeAt(int idx) {
-        if(idx < size()) {
+        if (idx < size()) {
             if (idx == 0) {
                 removeHead();
             } else {
@@ -141,6 +144,41 @@ public class LinkedList {
                 runner.next = runner.next.next;
             }
         }
-
     }
+
+    public void removeAtPosFromEnd(int pos) {
+        /**
+         * To do this in one pass, we have to use a trick.
+         * The trick is to maintain two pointers - 1. fast , 2. slow
+         * Move the fast pointer to position pos + 1 from beginning of the list.
+         * Now, move both fast and slow pointer forward by 1 until fast pointer becomes null
+         * When the fast pointer points to null i.e. has reached then end of the list,
+         * slow pointer will point the the node just behind the position pos.
+         */
+        Node fast = head;
+        Node slow = head;
+
+        /**
+         * Moving fast pointer to post + 1
+         */
+        for (int i = 0; i <= pos; i++) {
+            fast = fast.next;
+        }
+
+        /**
+         * Moving both slow and fast pointers forward till fast points to end of list.
+         * After this loop, slow pointer points to node at pos from end.
+         */
+        while (fast != null) {
+            fast = fast.next;
+            slow = slow.next;
+        }
+
+        slow.next = slow.next.next;
+    }
+
+    public void reverse() {
+        //TODO
+    }
+
 }
