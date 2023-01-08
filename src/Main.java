@@ -1,3 +1,4 @@
+import linkedlist.LinkedList;
 import practice.MathOps;
 import practice.RecursiveProblems;
 
@@ -7,8 +8,13 @@ public class Main {
 
     public static void main(String args[]) {
 
-        RecursiveProblems ob = new RecursiveProblems();
-        System.out.println(ob.listSubsets("abcd"));
+        LinkedList ll = new LinkedList(1);
+        ll.insertAtTail(3);
+        ll.insertAtTail(4);
+        ll.inertAt(2, 1);
+        ll.inertAt(5, 4);
+        ll.inertAt(6, 3);
+        ll.show();
 
     }
 
