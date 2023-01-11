@@ -178,7 +178,17 @@ public class LinkedList {
     }
 
     public void reverse() {
-        //TODO
+        Node prev = null;
+        Node runner = head;
+
+        while(runner != null) {
+            Node next = runner.next;
+            runner.next = prev;
+            prev = runner;
+            runner = next;
+        }
+
+        head = prev;
     }
 
 }
