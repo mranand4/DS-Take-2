@@ -1,4 +1,5 @@
 import linkedlist.LinkedList;
+import linkedlist.Queue;
 import practice.MathOps;
 import practice.RecursiveProblems;
 
@@ -8,15 +9,13 @@ public class Main {
 
     public static void main(String args[]) {
 
-        LinkedList ll = new LinkedList(1);
-        ll.insertAtTail(3);
-        ll.insertAtTail(4);
-        ll.inertAt(2, 1);
-        ll.inertAt(5, 4);
-        ll.inertAt(6, 3);
-        ll.show();
-        ll.reverse();
-        ll.show();
+        Queue queue = new Queue();
+        queue.enqueue(1);
+        queue.enqueue(3);
+        queue.enqueue(2);
+        System.out.println(queue.toString());
+        queue.dequeue();
+        System.out.println(queue.toString());
     }
 
 
