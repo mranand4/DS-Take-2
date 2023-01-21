@@ -1,4 +1,4 @@
-package linkedlist;
+package queue;
 
 import java.util.NoSuchElementException;
 
