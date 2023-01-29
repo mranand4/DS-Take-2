@@ -44,4 +44,12 @@ public class BinarySearchTree {
 		return this.root;
 	}
 
+	private Node search(Node root, int data) {
+		if(root == null) return null;
+
+		if(root.data == data) return root;
+
+		return (data < root.data) ? search(root.left, data) : search(root.right, data);
+	}
+
 }
